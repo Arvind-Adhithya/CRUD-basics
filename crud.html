@@ -1,0 +1,238 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Crud</title>
+    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Chilanka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Pro&display=swap" rel="stylesheet">
+
+
+    <!-- <i class="fa fa-star-o" aria-hidden="true"></i> -->
+</head>
+
+<body>
+    <!-- <table> -->
+    <!-- <tr> -->
+        <h1 class="text-center text-white greet">Contact List</h1>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Please Enter your Details Here :)</h1>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="container">
+                    <form name="myForm" method="POST">
+                        <div class="form-group row">
+                            <label for="uname" class="col-sm-2 col-form-label">Username</label>
+                            <label class="validation-error hide" id="ValidationError">This field is
+                                required.</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="fullname" name="fullname" value="Sri">
+                            </div>
+                        </div>
+                        <!-- <label for="gender" class="col-sm-2 col-form-label">Gender</label> -->
+                        <!-- <div id="radiocheck">
+                            
+                            <div class="form-check form-check-inline">
+
+                                <input class="gender" type="radio" name="genderselection" id="male"
+                                value="Male">
+                                <label class="form-check-label" for="gender">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="gender" type="radio" name="genderselection" id="female"
+                                    value="Female">
+                                <label class="form-check-label" for="gender">Female</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="gender" type="radio" name="genderselection" id="others"
+                                    value="Others">
+                                <label class="form-check-label" for="gender">Others</label>
+                            </div>
+                        </div> -->
+                        <div class="form-group row">
+                            <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                            <div class="col-sm-10 gender">
+                                <input type="radio" value="Male" checked name="choice">Male</input>
+                                <input type="radio" value="Female" name="choice">Female</input>
+                                <input type="radio" value="Others" name="choice">Others</input>
+                            </div>
+                        </div>
+                        
+                        <div class="form-check form-check-inline">
+                                <label for="department" >Department</label>
+                                <div class="col-sm-10 dept">
+                                    <input class="checkbox form-check-inline" id="box1" type="checkbox" value="IT" checked name="box">IT</input>
+                                    <input class="checkbox form-check-inline" id="box2" type="checkbox" value="CSE" name="box">CSE</input>
+                                    <input class="checkbox form-check-inline" id="box3" type="checkbox" value="ECE" name="box">ECE</input>
+                                    <input class="checkbox form-check-inline" id="box4" type="checkbox" value="EEE" name="box">EEE</input>
+                                </div>
+                                <!-- <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label> -->
+                              </div>
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" name="mail" id="mail">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="date" class="col-sm-2 col-form-label">Date</label>
+
+                            <div class="col-sm-10">
+                                <input type="date" id="date" onfocus="(this.type='date')" onblur="(this.type='text')" name="date">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="contact" class="col-sm-2 col-form-label">Contact</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="phonenum" name="phonenum">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="category" class="col-sm-2 col-form-label">Category</label>
+                            <div class="col-sm-10 selecter">
+                                <select class="form-control" id="category">
+                                    <option>Friends</option>
+                                    <option>Family</option>
+                                    <option>Buisness</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-sm-2 col-form-label">City</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="city" name="city">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button class="btn btn-default"> -->
+                            <button type="submit" id="submit" class="btn btn-default" value="Submit">Submit
+                            </button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-default form-btn"  data-dismiss="modal">Submit</button>
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div> -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <td>
+                
+                <div class="content">
+                    <form onsubmit="event.preventDefault();onFormSubmit();">
+                        <div>
+                            <label>Full Name</label><label class="validation-error hide" id="ValidationError">This field
+                                
+                                <input type="text" name="fullname" id="fullname">
+                            </div>
+                            is required.</label>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" name="mail" id="mail">
+                        </div>
+                        <div>
+                            <label>Contact</label>
+                            <input type="text" name="phonenum" id="phonenum">
+                        </div>
+
+                        <div>
+                            <label>City</label>
+                            <input type="text" name="city" id="city">
+                        </div>
+                        <div class="form-btn">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </td> -->
+
+            <!-- table-striped -->
+
+    <table class="container list table" id="arrList">
+        <div class="box">
+            <thead>
+                <tr>
+
+                    <div class="head">
+                        <th><a class="btnclk" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle "
+                                    id="adddesign"></i></a></th>
+                                    
+                        <!-- <div><a class="btnclk"><i class="fa fa-plus-circle " id="adddesign" aria-hidden="true"></i></a></div> -->
+                        <th> <button class="btntop" id="contact">Contacts</button></th>
+                        <th> <button class="btntop" id="all">ALL</button></th>
+                        <th> <button class="btntop" id="freq">Frequent</button></th>
+                        <th><button class="btntop" id="close">Close</button></th>
+                        <th><button class="btntop" id="search-i"><i class="fa fa-search"></i></button></th>
+                        <th><button class="btntop" id="cross"><i class="fa fa-times"></i></button></th>
+
+                        <!-- <button  id="contact">Contacts</div>
+                                                <button id="all">ALL</div>
+                                            <div id="freq">Frequent</div>
+                                            <div id="close">Close</div>
+                                            <div id="search-i"><i class="fa fa-search"></i></div>
+                                            <div id="cross"><i class="fa fa-times"></i></div> -->
+
+                    </div>
+
+                    <!-- </div> -->
+                </tr>
+            </thead>
+
+        </div>
+        
+        <tbody id="tbody">
+
+        </tbody>
+
+        </div>
+        
+    </table>
+
+
+    <!-- </tr> -->
+
+    <!-- </table> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="crud1.js"></script>
+
+</body>
+
+</html>
