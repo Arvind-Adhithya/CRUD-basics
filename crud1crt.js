@@ -1,3 +1,6 @@
+//corrected array with Index (still to change)
+
+
 let form = document.querySelector('form');
 let datas = [];
 form.addEventListener('submit', (e) => {
